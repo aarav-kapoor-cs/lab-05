@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -12,7 +13,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.listycity"
+        applicationId = "com.example.listcity"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -55,4 +56,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
+
+    implementation(platform("com.google.firebase:firebase-bom:35.0.0"))
+    implementation("com.google.firebase:firebase-firestore")
 }
